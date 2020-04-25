@@ -8,6 +8,9 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
 COPY ["Backend/Clientes/BarberShop.Clientes.API/BarberShop.Clientes.API.csproj", "Backend/Clientes/BarberShop.Clientes.API/"]
+COPY ["Backend/Clientes/BarberShop.Clientes.Aplicacao/BarberShop.Clientes.Aplicacao.csproj", "Backend/Clientes/BarberShop.Clientes.Aplicacao/"]
+COPY ["Backend/Clientes/BarberShop.Clientes.Infra/BarberShop.Clientes.Infra.csproj", "Backend/Clientes/BarberShop.Clientes.Infra/"]
+COPY ["Backend/Clientes/BarberShop.Clientes.Dominio/BarberShop.Clientes.Dominio.csproj", "Backend/Clientes/BarberShop.Clientes.Dominio/"]
 RUN dotnet restore "Backend/Clientes/BarberShop.Clientes.API/BarberShop.Clientes.API.csproj"
 COPY . .
 WORKDIR "/src/Backend/Clientes/BarberShop.Clientes.API"
